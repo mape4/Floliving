@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Atanatta Design Lesson Manager
+Plugin Name: Anatta Design Lesson Manager
 Plugin URI: http://geek.1bigidea.com/wordpress/plugins/lesson-planner
 Description: Adds Lesson and Course Manager.
 Version: 1.0
@@ -176,6 +176,20 @@ class anattaLessonPlanner {
 				)
 			)
 		) );
+		
+		// Instructions for this lesson
+		$lessons_post_options->register_post_option( array( 
+			'id' => '_instructions',
+			'title' => __('Instructions', 'floliving'),
+			'section' => 'lessons-custom-meta',
+			'callback' => array( 
+				'function' => array($this, 'instructions'),
+				'sanitize_callback'	=> array($this, 'filter_instructions'),
+				'args' => array( 
+					'description' => __('Enter Instructions as HTML string. Drag to re-order.', 'floliving') 
+				)
+			)
+		) );
 	
 		// Supplemental Resources for this lesson
 		$lessons_post_options->register_post_option( array( 
@@ -192,10 +206,12 @@ class anattaLessonPlanner {
 		) );
 	}
 	function add_javascript(){
-		global $current_screen;
 		
+		$current_screen = get_current_screen();
+
 		if( $current_screen->post_type == $this->custom_post_type ||
-			$current_screen->base == 'anatta_lessons_page_lessons-set-order'
+			$current_screen->base == 'anatta_lessons_page_lessons-set-order' ||
+			( isset($_GET['post']) && get_post_type($_GET['post']) == $this->custom_post_type )
 		){
 			wp_enqueue_script('jquery');
 			wp_enqueue_script('jquery-ui-core');
@@ -253,13 +269,75 @@ class anattaLessonPlanner {
 		
 		$homework = maybe_unserialize(get_post_meta($post->ID, '_homework', true));
 		echo '<div id="lesson-homework">';
-		echo "<h3>".__('Homework', 'floliving').'</h3>';
+		echo "<h3>".__('Homework Assignments', 'floliving').'</h3>';
 		echo $before;
 		for($i=0;$i<count($homework);$i++){
 			if( empty($homework[$i]) ) continue;
 			
 			echo $before_item;
 			echo $homework[$i];
+			echo $after_item;
+		}		
+		echo $after;
+		echo '</div>';
+	}
+	
+	
+	/**
+	 *	Handle the metafield instructions
+	 *		A line of instructions can be a string including html (limted to the same markup as a post)
+	 */
+	 
+	function instructions($args){
+		global $lessons_post_fields;
+		
+		$instructions = maybe_unserialize($args['value']);
+		
+		if( !is_array($instructions) ) $instructions = array();
+		
+		echo '<ul class="sortable no-bullets instruction-list">';
+		foreach( $instructions as $instruction_item ){
+			if( empty($instruction_item ) ) continue;
+?>
+		<li>
+			<div class="handle">
+				<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="<?php echo esc_attr( $instruction_item ); ?>" />
+			</div>
+		</li>
+<?php	} ?>
+		<li>
+			<div class="handle">
+				<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="" />
+			</div>
+		</li>
+<?php
+		echo '</ul>';
+		echo '<span class="description">';
+		echo $args['description'];
+		echo '</span><br />';
+		echo '<a href="#" class="add-a-line" id="instruction-list" >';
+		_e('Add Instruction', 'floliving');
+		echo '</a>';	
+	}
+	function filter_instructions($input){
+		$allowed = array();
+		foreach($input as $instructions){
+			$allowed[] = wp_kses_post($instructions);
+		}
+		return serialize($allowed);
+	}
+	function insert_instructions($before="<ul>", $after="</ul>", $before_item="<li>", $after_item="</li>"){
+		global $post;
+		
+		$instructions = maybe_unserialize(get_post_meta($post->ID, '_instructions', true));
+		echo '<div id="lesson-instruction">';
+		echo "<h3>".__('Instructions', 'floliving').'</h3>';
+		echo $before;
+		for($i=0;$i<count($instructions);$i++){
+			if( empty($instructions[$i]) ) continue;
+			
+			echo $before_item;
+			echo $instructions[$i];
 			echo $after_item;
 		}		
 		echo $after;
@@ -318,7 +396,7 @@ class anattaLessonPlanner {
 			
 			$url = esc_url_raw($input['uri'][$i]);
 			$allowed['title'][] = ( !empty($input['title'][$i]) ) ? wp_filter_nohtml_kses($input['title'][$i]) : $url;
-			$allowed['url'][] = $url;
+			$allowed['uri'][] = $url;
 		}
 		return serialize($allowed);
 	}
@@ -333,7 +411,7 @@ class anattaLessonPlanner {
 			if( empty($resources['uri'][$i]) ) continue;
 			
 			echo $before_item;
-			echo '<a href="'.esc_url($resources['uri'][$i]).'">'.$resources['title'][$i].'</a>';
+			echo '<a href="'.esc_url($resources['uri'][$i]).'" target="_blank">'.$resources['title'][$i].'</a>';
 			echo $after_item;
 		}		
 		echo $after;
@@ -429,5 +507,8 @@ if( class_exists('anattaLessonPlanner') ){
 	}
 	function lessons_insert_homework($before="<ul>", $after="</ul>", $before_item="<li>", $after_item="</li>"){
 		anattaLessonPlanner::insert_homework($before, $after, $before_item, $after_item);
+	}
+	function lessons_insert_instructions($before="<ul>", $after="</ul>", $before_item="<li>", $after_item="</li>"){
+		anattaLessonPlanner::insert_instructions($before, $after, $before_item, $after_item);
 	}
 }

@@ -53,11 +53,10 @@
 <?php endif; ?>
     
 <?php if ('open' == $post->comment_status) : ?>
-    <h2 id="respond">Leave your own comment!</h2>
-    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+       <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
         <fieldset>
             <?php if ( $user_ID ) : ?>
-            <label>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></label>
+            <!--<label>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></label>-->
             <?php else : ?>
             <label for="author">Your Name (required):</label>
             <input name="author" id="author" value="<?php echo $comment_author; ?>" />
@@ -67,7 +66,7 @@
             <input name="url" id="url" value="<?php echo $comment_author_url; ?>" />
             <?php endif; ?>
             <!--<p><small><strong>XHTML:</strong> You can use these tags: <?php echo allowed_tags(); ?></small></p>-->
-            <label for="comment">Leave a message:</label>
+            <h2 for="comment">Leave A Comment:</h2>
             <textarea name="comment" id="comment"></textarea>
             <input name="submit" type="submit" id="submit" value="Leave your comment" />
             <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />

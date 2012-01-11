@@ -7,7 +7,7 @@
 				<h2><?php the_title(); ?></h2>
 			
 			</header>
-			<section>
+			<section class="posts">
 				<?php the_content(); ?>
 			</section>
 			<div>
@@ -21,13 +21,16 @@
 			</div>
 
 		<?php endwhile; ?>
+        <?php comments_template(); ?>
 				</article>
 		<?php else : ?>
+        
 		<article>
 			<header>
 				<h2>Not Found</h2>
 			</header>
 		</article>
+        
 		<?php endif; ?>
 		<div class="sidebar" id="breadcrumb-pages">
 		<aside>

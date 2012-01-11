@@ -1,0 +1,114 @@
+/* Page Background */
+html {
+	background: #fff!important;
+	margin: auto;
+	font-weight:bold;
+}
+body.login{
+	 background:url(../images/container-bg.png) no-repeat left top!important;
+	 min-height: 700px!important;
+}
+/* WordPress Logo - MAKE SURE TO MATCH THE WIDTH AND HEIGHT */
+h1{
+	position: absolute!important;
+	left: 135px;
+	top: 25px;
+}
+
+h1 a {
+	background:url(../images/logo.jpg) 0 0 no-repeat;
+	width: 179px;
+	height: 81px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+/* Top Bar Background Color */
+body.login {
+	border-top-color:#dac6ad;
+}
+.message {
+	margin-bottom: 0px;
+}
+/* Login Button */
+#wp-submit {
+	background: #bc3d1d;
+	border: #f24643;
+}
+/* Lost Password Link */
+.login #nav a, .login #nav a:hover {
+	color: #443030!important;;
+}
+/* Top Bar Link */
+.login p#backtoblog a:link, .login p#backtoblog a:visited {
+	color:#443030;
+	font-weight: bold;
+}
+.login p#backtoblog a:hover, .login p#backtoblog a:active {
+	color:#443030;
+	text-decoration:underline;
+}
+form{
+background: #F3EFF3!important;
+border: 1px solid lightGrey!important;
+text-shadow: none!important;
+box-shadow: none!important;
+border-radius: 0!important;
+overflow: hidden!important;
+}
+.login .message{
+	border: none!important;
+	background: none!important;
+	padding: 0px!important;
+	margin-bottom: 10px!important;
+	color: #b14bb9!important;
+	
+}
+body form .input{
+	background: #fff!important;
+	color: #535153!important;
+	border: 1px solid #AFA9AD!important;
+	border-top: 2px solid #707070!important;
+	padding: 10px!important;
+	font-size: 12px!important;
+	height: 15px!important;
+	width: 239px!important;
+}
+.login #wp-submit{
+width: 93px;
+height: 35px;
+background: url(../images/login-btn.jpg) no-repeat right center;
+text-indent: -99999px;
+float: left;
+cursor: pointer;
+padding: 0px;
+margin: 0px;
+border-radius: 0px;
+}
+.login #lostpasswordform #wp-submit{
+width: 205px;
+height: 37px;
+background: url("../images/new-pass-btn.png") no-repeat 0px 0px!important;
+text-indent: -99999px;
+float: left;
+cursor: pointer;
+padding: 0px;
+margin: 0px;
+border-radius: 0px;
+}
+
+#login label{
+	font-family: arial!important;
+	font-size: 13px!important;
+	color: #535153!important;
+}
+.login .submit{
+	float: left;
+	overflow: hidden;
+	margin-top: 10px;
+	clear: both;
+}
+
+#login{
+	margin: 194px auto 0px auto!important ;
+}

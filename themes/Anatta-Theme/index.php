@@ -1,3 +1,8 @@
+<?php
+if ( is_user_logged_in() ) 
+
+ {
+?>
 <?php get_header(); ?>
 
 	<section class="content clearfix wrapper">
@@ -44,3 +49,6 @@
 	    </div>
 	</section>
 <?php get_footer(); ?>
+<?php } else { 
+header("Location: http://floliving.wordpressprojects.com/login/");
+ } ?>

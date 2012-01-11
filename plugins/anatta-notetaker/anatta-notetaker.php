@@ -207,11 +207,11 @@ class AnattaNoteTaker {
 	}
 	function insert_notefield(){
 		$message = '';
-		$button_content = __('Save My Note', 'floliving');
+		$button_content = __('', 'floliving');
 		$post_id = get_queried_object_id(); // the id of the current single post
 		if( $this->is_note_attached() ){
 			$message = $this->connected_posts->post->post_content;
-			$button_content = __('Update My Note', 'floliving');
+			$button_content = __('', 'floliving');
 		}
 ?>
 		<div id='anatta_notetaker'>
@@ -222,7 +222,7 @@ class AnattaNoteTaker {
 				<div style="text-align:right;padding-top:1em;">
 					<span style="width: 80%;" id="anatta_textfield_status"></span>
 					<a id="save_note" class="button blue" title="Save your note on this lesson"><?php echo $button_content; ?></a>
-					<a id="erase_note" class="button red" title="Erase your note on this lesson"><?php _e('Erase My Note', 'floliving'); ?></a>
+					<a id="erase_note" class="button red" title="Erase your note on this lesson"><?php _e('', 'floliving'); ?></a>
 				</div>
 				</form>
 		</div>
@@ -512,8 +512,8 @@ class Anatta_Note_Manager{
 		return array(
 			'content' =>  '
 				<li id="'.self::note_id($post).'" class="show-tip" title="'.esc_html($post->post_content).'">
-					<h3><a href="'.get_permalink($related->post->ID).'">'.$related->post->post_title.'</a></h3>
-					'.self::excerpt($post->post_content).'
+					<big><a href="'.get_permalink($related->post->ID).'">'.$related->post->post_title.'</a></big>
+					<p>'.self::excerpt($post->post_content).'</p>
 				</li>',
 			'widget_id' => self::note_id($post)
 		);

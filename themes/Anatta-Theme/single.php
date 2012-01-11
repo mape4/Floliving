@@ -7,7 +7,7 @@
 				<h2><?php the_title(); ?></h2>
 			
 			</header>
-			<section>
+			<section class="posts">
 				<?php the_content(); ?>
 			</section>
 

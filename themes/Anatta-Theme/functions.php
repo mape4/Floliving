@@ -159,13 +159,24 @@ function dimox_breadcrumbs() {
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
+		foreach ( (array) get_object_taxonomies($post_type->name) as $taxonomy ) {
+		  $object_terms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'all'));
+		  if ($object_terms) {
+		   
+			foreach ($object_terms as $term) {
+			  echo '<a href="' . esc_attr(get_term_link($term, $taxonomy)) . '" title="' . sprintf( __( "View all posts in %s" ), $term->name ) . '" ' . '>' . $term->name.'</a> '. $delimiter . ' ';
+			}
+		  }
+		}
         $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
+       // echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
+        //echo $before . get_the_title() . $after;
+		echo  get_the_title() . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
         echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
         echo $before . get_the_title() . $after;
+		
       }
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
@@ -219,5 +230,66 @@ function dimox_breadcrumbs() {
  
   }
 } // end dimox_breadcrumbs()
+
+//add extra fields to custom taxonomy courses edit form
+function extra_tax_fields($tag) {
+   //check for existing taxonomy meta for term ID
+    $t_id = $tag->term_id;
+    $term_meta = get_option( "taxonomy_$t_id");
+?>
+<tr class="form-field">
+<th scope="row" valign="top"><label for="cat_rss_feed"><?php _e('Courses RSS Feed'); ?></label></th>
+<td>
+<input type="text" name="term_meta[rss]" id="term_meta[rss]" size="3" style="width:60%;" value="<?php echo $term_meta['rss'] ? $term_meta['rss'] : ''; ?>"><br />
+            <span class="description"><?php _e('RSS FEED URL: enter full url with http://'); ?></span>
+        </td>
+</tr>
+
+<?php
+
+}
+//function for adding image url to company taxonomy
+function extra_tax_fields_add($tag) { 
+
+?>
+	<div class="form-field">
+		<label for="image-url"><?php _e('Courses RSS Feed') ?></label>
+		<input name="term_meta[rss]" id="term_meta[rss]" type="text" value="" size="40" aria-required="true" />
+		<p class="description"><?php _e('RSS FEED URL: enter full url with http://'); ?></p>
+	</div>
+<?php }
+
+// save extra taxonomy fields for course taxonomy
+function save_extra_taxonomy_fields( $term_id ) {
+    if ( isset( $_POST['term_meta'] ) ) {
+        $t_id = $term_id;
+        $term_meta = get_option( "taxonomy_$t_id");
+        $cat_keys = array_keys($_POST['term_meta']);
+            foreach ($cat_keys as $key){
+            if (isset($_POST['term_meta'][$key])){
+                $term_meta[$key] = $_POST['term_meta'][$key];
+            }
+        }
+        //save the option array
+        update_option( "taxonomy_$t_id", $term_meta );
+    }
+}
+ 
+add_action( 'course_add_form_fields', 'extra_tax_fields_add', 10, 2); //action hook for showing url field for course while adding new course
+
+add_action( 'course_edit_form_fields', 'extra_tax_fields', 10, 2); //action hook for showing url field for course while editing new course
+
+add_action( 'edited_course', 'save_extra_taxonomy_fields', 10, 2); //action hook for saving value for url while editing course taxonomy 
+
+add_action( 'created_course', 'save_extra_taxonomy_fields', 10, 2); //action hook for saving value for url while adding new course taxonomy
+
+//including custom login css
+
+function custom_login() { ?>
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/wplogin/wplogin.css" />
+<?php }
+add_action('login_head', 'custom_login');
+ 
+ 
 
 ?>

@@ -30,7 +30,11 @@
 <body>
 	<!-- Container -->
 	    <!-- Header -->
-	    <?php if ( is_page('logged-out') ) 
+        <?php 
+		$request_uri = explode('/',$_SERVER['REQUEST_URI']);
+		$request_uris = $request_uri[1];
+		?>
+	    <?php if ( is_page('logged-out') || is_page('registration') || is_page(login) || ($request_uris == 'wishlist-member')) 
 	    { ?>
 	    
 	     <header id="header">
@@ -51,10 +55,15 @@
 	    <header id="header">
 	      <div class="wrapper clearfix">
 	        <section class="clearfix">
+           
 	          <ul class="top-navigation">
 	            <li><a href="#">Need Help/Support?</a></li>
-	            <li><a href="#">My Account</a></li>
-	            <li><a href="#">Logout</a></li>
+                 <?php if(is_user_logged_in()) { 
+				 $user = wp_get_current_user();
+				 ?>
+	            <li><a href="<?php bloginfo('url');?>/my-account/">My Account</a></li>
+	            <li><?php wp_loginout(); ?></li>
+                <?php } ?>
 	          </ul>
 	        </section>
 	        <h2 class="tagline">Joyful, feminine, inner-world</h2>

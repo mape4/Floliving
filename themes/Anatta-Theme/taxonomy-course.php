@@ -7,13 +7,14 @@ $args = array_merge( $wp_query->query, array( 'orderby' => 'menu_order', 'order'
 query_posts( $args );
 
 ?>
-
+<?php if(is_user_logged_in()) { ?>
 <?php get_header(); ?>
 
 	<section class="content clearfix wrapper">
 		<article id="post-<?php the_ID(); ?>" class="left-column home-page">
-		<h1 class="page-title">The Sweet Spot</h1>
-		<p class="page-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis velit ac ipsum sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis velit ac ipsum sollicitudin.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis velit ac ipsum sollicitudin.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis velit ac ipsum sollicitudin.</p>
+        <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
+		<h1 class="page-title"><?php echo $term->name; ?></h1>
+		<p class="page-des"><?php echo $term->description; ?></p>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<section class="home-section">
 			<article class="clearfix">
@@ -43,14 +44,22 @@ query_posts( $args );
 		</article>
 		
 		<?php else : ?>
-		<article>
+		<section class="home-section">
+			<article class="clearfix">
 			<header>
 				<h2>Not Found</h2>
 			</header>
 		</article>
+        </section>
 		<?php endif; ?>
 		<div class="sidebar">
 	    <?php get_sidebar(); ?>
 	    </div>
 	</section>
+   
 <?php get_footer(); ?>
+ <?php } else { 
+    header("Location: http://floliving.wordpressprojects.com/login");
+    } ?>
+
+

@@ -66,7 +66,7 @@
                 <?php } ?>
 	          </ul>
 	        </section>
-	        <h2 class="tagline">Joyful, feminine, inner-world</h2>
+	        <h2 class="tagline">essential health education for today's woman</h2>
 	        <div class="logo">
 	          <h1><a href="<?php bloginfo('url'); ?>" rel="home" title="Go to homepage">Flo Livings</a></h1>
 	        </div>

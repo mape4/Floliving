@@ -12,3 +12,4 @@
 [24-Nov-2011 07:34:16] PHP Fatal error:  Call to undefined function get_header() in /home/flolivin/public_html/wp-content/themes/Anatta-Theme/index.php on line 1
 [24-Nov-2011 07:34:33] PHP Fatal error:  Call to undefined function get_header() in /home/flolivin/public_html/wp-content/themes/Anatta-Theme/index.php on line 1
 [24-Nov-2011 07:34:45] PHP Fatal error:  Call to undefined function get_header() in /home/flolivin/public_html/wp-content/themes/Anatta-Theme/index.php on line 1
+[23-Jan-2012 00:14:58] PHP Fatal error:  Call to undefined function bloginfo() in /home/flolivin/public_html/wp-content/themes/Anatta-Theme/landing.php on line 17

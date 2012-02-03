@@ -1,0 +1,262 @@
+ /*
+ Theme Name: flo-inner
+ Theme URL: http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/
+ Description: Ready to get in the flo?
+ Version: 1
+ Author: Rick Gregorio
+ Author URL: http://www.networkscolorado.com
+ */
+
+@charset "utf-8";
+body  {
+	font: 100% Arial, Verdana, Helvetica, sans-serif;
+	font-size:12px;
+	background: #605f61;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+h1 {
+	font-size:22px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:400;
+	line-height:26px;
+}
+
+h2 {
+font-size:18px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:400;
+	line-height:22px;
+}
+
+h2 a,h2 a:hover {
+font-size:18px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:underline;
+	font-weight:400;
+	line-height:22px;
+}
+
+.largetext {
+	font-size:18px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:400;
+	line-height:22px;
+}
+.mediumtext {
+	font-size:16px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:400;
+	line-height:20px;
+}
+.mediumtext2 {
+	font-size:12px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:700;
+	line-height:14px;
+}
+.smalltext {
+	font-size:10px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#605f61;
+	text-decoration:none;
+	/* font-weight:600; */
+	line-height:16px;
+}
+.greytext {
+	font-size:13px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	text-decoration:none;
+	font-weight:500;
+	line-height:18px;
+}
+.greytext-lrg {
+	font-size:16px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	text-decoration:none;
+	font-weight:500;
+	line-height:20px;
+}
+.greytext-small {
+	font-size:13px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	text-decoration:none;
+	font-weight:500;
+	line-height:16px;
+}
+li.li-purple {
+	font-size:14px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:500;
+	line-height:18px;
+}
+a {
+	font-size:12px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:underline;
+	font-weight:600;
+	line-height:16px;
+}
+a:hover {
+	font-size:12px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#636363;
+	text-decoration:underline;
+	font-weight:600;
+	line-height:16px;
+}
+a.navlink {
+	font-size:11px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666666;
+	text-decoration:none;
+	font-weight:600;
+	line-height:16px;
+}
+a.navlink:hover {
+	font-size:11px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#50003e;
+	text-decoration:none;
+	font-weight:600;
+	line-height:16px;
+}
+a.smalllink {
+	font-size:10px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#717073;
+	text-decoration:none;
+	/*font-weight:600;*/
+	line-height:16px;
+}
+a.smalllink:hover {
+	font-size:10px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#333333;
+	text-decoration:none;
+	/*font-weight:600;*/
+	line-height:16px;
+}
+.twoColFixRt #container { 
+	width: 980px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	background-image:url(../images/page_bg_inner.jpg);
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #713062;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.twoColFixRt #container-inner { 
+	width: 980px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #713062;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	background-color:#FFF;
+}
+.twoColFixRt #sidebar1 {
+	float: right; /* since this element is floated, a width must be given */
+	width: 430px;
+	padding: 0 0 0 0;
+	/* background-image:url(../images/home_right_bg.png); */
+	background-repeat:no-repeat;
+}
+.twoColFixRt #sidebar1-inner {
+	float: right; /* since this element is floated, a width must be given */
+	width: 242px;
+	padding: 0 0 0 0;
+	background-repeat:no-repeat;
+}
+.twoColFixRt #mainContent { 
+	margin: 0 430px 0 0; 
+	padding: 0; 
+	width: 550px;
+} 
+.twoColFixRt #mainContent-inner { 
+	margin: 0 242px 0 0; 
+	padding: 0; 
+	width: 738px;
+} 
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0px;
+    font-size: 0px;
+    line-height: 0px;
+}
+.clearfloat-left { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:left;
+    height:0px;
+    font-size: 0px;
+    line-height: 0px;
+}
+.centeredImage  {
+    vertical-align: text-bottom;
+    display:block;
+}
+
+.e2ma_signup_message {
+    color: #333333;
+    font-family: Verdana,sans-serif;
+    font-size: 10px;
+	display:none;
+}
+
+.e2ma_signup_form_required_asterix{
+display:none;
+}
+
+.e2ma_signup_form_required_footnote
+{
+display:none;
+}
+
+.img_entry img { float:left;
+max-width:680px;
+padding-right: 20px;
+ }
+ 
+ .entry { 
+ margin-bottom: 5px;
+
+ }

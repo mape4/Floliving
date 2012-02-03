@@ -1,0 +1,86 @@
+<?php
+/*
+Template Name: Home
+*/
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>flo living</title>
+<link href="http://www.floliving.com/stylesheet/styles.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixRt #sidebar1 { width: 220px; }
+</style>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixRt #sidebar1 { padding-top: 30px; }
+.twoColFixRt #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body class="twoColFixRt" onload="MM_preloadImages('../../images/home_swap_blog.png','../../images/home_swap_prod.png','../../images/home_swap_succ.png','../../images/home_swap_video.png')">
+<div id="container">
+  <?php include ('header-links-home.php'); ?>
+  <div id="sidebar1" style="padding-top:30px;">
+    <div style="height:260px; width:380px; padding-left:20px; padding-right:30px;">
+      <div style="padding-top:50px; height:210px;">
+        <?php include ('sidebar-ready.php'); ?>
+      </div>
+    </div>
+    <div style="height:82px; width:80px; padding-left:320px; padding-right:30px; padding-top:20px;"><a href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=109"><img src="http://www.floliving.com/images/button_round_activate.png" width="75" height="76" border="0" /></a></div>
+    <div style="height:85px; width:380px; padding-left:16px; padding-right:30px;">
+      <?php include ('sidebar-homestudy.php'); ?>
+    </div>
+    <div style="height:107px; width:430px;"><img src="http://www.floliving.com/images/community_head.png" width="429" height="26" vspace="5" /><br />
+      <img src="http://www.floliving.com/images/button_welcome.png" width="104" height="23" /><img src="http://www.floliving.com/images/button_video.png" width="104" height="23" hspace="10" /><img src="http://www.floliving.com/images/button_forum.png" width="76" height="23" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.floliving.com/images/icon_fb.png" width="19" height="20" /><img src="http://www.floliving.com/images/icon_twitter.png" width="20" height="20" hspace="6" /><img src="http://www.floliving.com/images/icon_in.png" width="19" height="19" /><br />
+      <br />
+      <?php include ('include-footerlinks.php'); ?>
+      <!--&copy;<span class="smalltext"> Flo Living 2010</span> <span class="smalltext">|</span> <a href="#" class="smalllink">Privacy Policy and Terms of Use</a> <span class="smalltext">|</span> <a href="#" class="smalllink">About Flo Living</a> <span class="smalltext">|</span> <a href="#" class="smalllink">Contact Us</a>--></div>
+    <!-- end #sidebar1 -->
+  </div>
+  <div id="mainContent"><img src="../../images/home_swap_home.png" width="550" height="587" border="0" usemap="#Map" id="Image1" />
+    <map name="Map" id="Map">
+      <area shape="circle" coords="461,60,55" href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=92" alt="get in the flo" />
+      <area shape="circle" coords="385,172,48" href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=58" alt="alisa's blog" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','../../images/home_swap_blog.png',1)" />
+      <area shape="circle" coords="484,269,58" href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=121" alt="watch our video" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','../../images/home_swap_video.png',1)" />
+      <area shape="circle" coords="380,385,61" href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=92" alt="products &amp; resources" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','../../images/home_swap_prod.png',1)" />
+      <area shape="circle" coords="428,511,55" href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=80" alt="success stories" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','../../images/home_swap_succ.png',1)" />
+    </map>
+  </div>
+  <!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats -->
+  <!--<br class="clearfloat" />-->
+  <!-- end #container -->
+</div>
+</body>
+</html>

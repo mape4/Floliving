@@ -259,6 +259,18 @@ p.page-des, .page-des p { color: #666666; font-size: 13px; font-family:Helvetica
 .sidebar ul.ambassadors-list li span { display: block; padding-top: 5px; }
 .sidebar ul.ambassadors-list img { border: 2px solid #fff; }
 .sidebar ul.ambassadors-list li.item2, .sidebar ul.ambassadors-list li.item4 { margin-right: 0px; margin-bottom: 10px; }
+.mc-field-group input{
+	background: #F8EDE7!important;
+	width: 490px!important;
+	border: 0!important;
+	border-top: 1px solid #B8B4B2!important;
+	border-left: 1px solid #E3DCD8!important;
+	border-right: 1px solid #E3DCD8!important;
+	margin-right: 4px!important;
+	font-size: 12px!important;
+	color: #666!important;
+	padding: 11px 0 12px 9px!important;
+}
 
 
 /* 768px width */

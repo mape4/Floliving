@@ -87,7 +87,7 @@ function MM_swapImage() { //v3.0
 
 
 <div class="mc-field-group">
-	<label for="mce-FNAME">Name </label><br/>
+	<label for="mce-FNAME">First Name </label><br/>
 	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
 </div>
 <div class="mc-field-group">

@@ -145,7 +145,7 @@ function widget_twitter_init() {
             }
         }
  
-        echo $before_widget . $before_title . '<header><a href="http://twitter.com/' . $item['username'] . '" class="twitter_title_link">'. $item['title'] . '</a></header>' . $after_title;
+        echo $before_widget . $before_title . '<header><a href="http://twitter.com/' . $item['username'] . '" class="twitter_title_link" target="_blank">'. $item['title'] . '</a></header>' . $after_title;
         twitter_messages($item['username'], $item['num'], true, $item['update'], $item['linked'], $item['hyperlinks'], $item['twitter_users'], $item['encode_utf8']);
         echo $after_widget;
  

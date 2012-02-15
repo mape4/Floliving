@@ -166,13 +166,13 @@ class anattaLessonPlanner {
 		// Homework for this lesson
 		$lessons_post_options->register_post_option( array( 
 			'id' => '_homework',
-			'title' => __('Homework Assignments', 'floliving'),
+			'title' => __('Essential Downloads', 'floliving'),
 			'section' => 'lessons-custom-meta',
 			'callback' => array( 
 				'function' => array($this, 'homework'),
 				'sanitize_callback'	=> array($this, 'filter_homework'),
 				'args' => array( 
-					'description' => __('Enter assignment as HTML string. Drag to re-order.', 'dsc-enterprises') 
+					'description' => __('Enter Essential Downloads as HTML string. Drag to re-order.', 'dsc-enterprises') 
 				)
 			)
 		) );
@@ -180,13 +180,13 @@ class anattaLessonPlanner {
 		// Instructions for this lesson
 		$lessons_post_options->register_post_option( array( 
 			'id' => '_instructions',
-			'title' => __('Instructions', 'floliving'),
+			'title' => __('Homework Assignments', 'floliving'),
 			'section' => 'lessons-custom-meta',
 			'callback' => array( 
 				'function' => array($this, 'instructions'),
 				'sanitize_callback'	=> array($this, 'filter_instructions'),
 				'args' => array( 
-					'description' => __('Enter Instructions as HTML string. Drag to re-order.', 'floliving') 
+					'description' => __('Enter Homework Assignments as HTML string. Drag to re-order.', 'floliving') 
 				)
 			)
 		) );
@@ -197,7 +197,7 @@ class anattaLessonPlanner {
 			'title' => __('Resources', 'floliving'),
 			'section' => 'lessons-custom-meta',
 			'callback' => array( 
-				'function' => array($this, 'resources'),
+				'function' => array($this, 'edit_resources'),
 				'sanitize_callback'	=> array($this, 'filter_resources'),
 				'args' => array( 
 					'description' => __('The title/URI of additional resources. Drag to re-order.', 'floliving'
@@ -239,13 +239,13 @@ class anattaLessonPlanner {
 ?>
 		<li>
 			<div class="handle">
-				<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="<?php echo esc_attr( $homework_item ); ?>" />
+				<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="<?php echo esc_attr( $homework_item ); ?>" />
 			</div>
 		</li>
 <?php	} ?>
 		<li>
 			<div class="handle">
-				<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="" />
+				<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="" />
 			</div>
 		</li>
 <?php
@@ -262,14 +262,14 @@ class anattaLessonPlanner {
 		foreach($input as $homework){
 			$allowed[] = wp_kses_post($homework);
 		}
-		return serialize($allowed);
+		return $allowed;
 	}
 	function insert_homework($before="<ul>", $after="</ul>", $before_item="<li>", $after_item="</li>"){
 		global $post;
 		
 		$homework = maybe_unserialize(get_post_meta($post->ID, '_homework', true));
 		echo '<div id="lesson-homework">';
-		echo "<h3>".__('Homework Assignments', 'floliving').'</h3>';
+		echo "<h3>".__('Essential Downloads', 'floliving').'</h3>';
 		echo $before;
 		for($i=0;$i<count($homework);$i++){
 			if( empty($homework[$i]) ) continue;
@@ -301,13 +301,13 @@ class anattaLessonPlanner {
 ?>
 		<li>
 			<div class="handle">
-				<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="<?php echo esc_attr( $instruction_item ); ?>" />
+				<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="<?php echo esc_attr( $instruction_item ); ?>" />
 			</div>
 		</li>
 <?php	} ?>
 		<li>
 			<div class="handle">
-				<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="" />
+				<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[]" value="" />
 			</div>
 		</li>
 <?php
@@ -324,14 +324,14 @@ class anattaLessonPlanner {
 		foreach($input as $instructions){
 			$allowed[] = wp_kses_post($instructions);
 		}
-		return serialize($allowed);
+		return $allowed;
 	}
 	function insert_instructions($before="<ul>", $after="</ul>", $before_item="<li>", $after_item="</li>"){
 		global $post;
 		
 		$instructions = maybe_unserialize(get_post_meta($post->ID, '_instructions', true));
 		echo '<div id="lesson-instruction">';
-		echo "<h3>".__('Instructions', 'floliving').'</h3>';
+		echo "<h3>".__('Homework Assignments', 'floliving').'</h3>';
 		echo $before;
 		for($i=0;$i<count($instructions);$i++){
 			if( empty($instructions[$i]) ) continue;
@@ -350,7 +350,7 @@ class anattaLessonPlanner {
 	 *		the entire link. If no title is provided, the URL is shown and hotlinked.
 	 */
 	 
-	function resources($args){
+	function edit_resources($args){
 		global $lessons_post_fields;
 		$resources = maybe_unserialize($args['value']);
 
@@ -363,9 +363,9 @@ class anattaLessonPlanner {
 		<li>
 			<div class="handle">
 			<label><?php _e('Title', 'floliving'); ?></label>
-			<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[title][]" value="<?php echo $resources['title'][$i]; ?>" />
+			<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[title][]" value="<?php echo $resources['title'][$i]; ?>" />
 			<label><?php _e('URL', 'floliving'); ?></label>
-			<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[uri][]" value="<?php echo $resources['uri'][$i]; ?>" />
+			<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[uri][]" value="<?php echo $resources['uri'][$i]; ?>" />
 			</div>
 		</li>
 <?php
@@ -374,9 +374,9 @@ class anattaLessonPlanner {
 		<li>
 			<div class="handle">
 			<label><?php _e('Title', 'floliving'); ?></label>
-			<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[title][]" value="" />
+			<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[title][]" value="" />
 			<label><?php _e('URL', 'floliving'); ?></label>
-			<input <?php echo $field_id; ?> class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[uri][]" value="" />
+			<input class="large-text" type="text" name="<?php echo $args['name_attr']; ?>[uri][]" value="" />
 			</div>
 		</li>
 <?php
@@ -390,15 +390,17 @@ class anattaLessonPlanner {
 		echo '</a>';	
 	}
 	function filter_resources($input){
+
 		$allowed = array();
 		for($i=0;$i<count($input['uri']);$i++){
 			if( empty($input['uri'][$i]) ) continue;
 			
 			$url = esc_url_raw($input['uri'][$i]);
-			$allowed['title'][] = ( !empty($input['title'][$i]) ) ? wp_filter_nohtml_kses($input['title'][$i]) : $url;
+			$allowed['title'][] = ( !empty($input['title'][$i]) ) ? wp_filter_kses($input['title'][$i]) : $url;
 			$allowed['uri'][] = $url;
 		}
-		return serialize($allowed);
+//file_put_contents ( ABSPATH.'/wp-content/resources.txt', print_r($input, TRUE).print_r($allowed, true) );
+		return $allowed;
 	}
 	function insert_resources($before="<ul>", $after="</ul>", $before_item="<li>", $after_item="</li>"){
 		global $post;

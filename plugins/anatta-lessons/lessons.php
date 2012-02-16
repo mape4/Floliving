@@ -197,7 +197,7 @@ class anattaLessonPlanner {
 			'title' => __('Resources', 'floliving'),
 			'section' => 'lessons-custom-meta',
 			'callback' => array( 
-				'function' => array($this, 'edit_resources'),
+				'function' => array($this, 'resources'),
 				'sanitize_callback'	=> array($this, 'filter_resources'),
 				'args' => array( 
 					'description' => __('The title/URI of additional resources. Drag to re-order.', 'floliving'
@@ -350,7 +350,7 @@ class anattaLessonPlanner {
 	 *		the entire link. If no title is provided, the URL is shown and hotlinked.
 	 */
 	 
-	function edit_resources($args){
+	function resources($args){
 		global $lessons_post_fields;
 		$resources = maybe_unserialize($args['value']);
 
@@ -358,7 +358,7 @@ class anattaLessonPlanner {
 
 		echo '<ul class="sortable no-bullets resource-list clearfix">';
 		for($i=0;$i<count($resources['uri']);$i++){
-			if( empty($resources['uri'][$i]) ) continue;
+			//if( empty($resources['uri'][$i]) ) continue;
 ?>
 		<li>
 			<div class="handle">
@@ -393,7 +393,7 @@ class anattaLessonPlanner {
 
 		$allowed = array();
 		for($i=0;$i<count($input['uri']);$i++){
-			if( empty($input['uri'][$i]) ) continue;
+			//if( empty($input['uri'][$i]) ) continue;
 			
 			$url = esc_url_raw($input['uri'][$i]);
 			$allowed['title'][] = ( !empty($input['title'][$i]) ) ? wp_filter_kses($input['title'][$i]) : $url;
@@ -410,11 +410,19 @@ class anattaLessonPlanner {
 		echo "<h3>".__('Resources', 'floliving').'</h3>';
 		echo $before;
 		for($i=0;$i<count($resources['uri']);$i++){
-			if( empty($resources['uri'][$i]) ) continue;
-			
-			echo $before_item;
-			echo '<a href="'.esc_url($resources['uri'][$i]).'" target="_blank">'.$resources['title'][$i].'</a>';
-			echo $after_item;
+			//if( empty($resources['uri'][$i]) ) continue;
+			if( empty($resources['uri'][$i]) && !empty($resources['title'][$i]))
+			{
+				echo $before_item;
+				echo $resources['title'][$i];
+				
+			}
+			else
+			{
+				echo $before_item;
+				echo '<a href="'.esc_url($resources['uri'][$i]).'" target="_blank">'.$resources['title'][$i].'</a>';
+				echo $after_item;
+			}
 		}		
 		echo $after;
 		echo '</div>';

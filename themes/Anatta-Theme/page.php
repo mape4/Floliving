@@ -1,3 +1,7 @@
+<?php
+if ( is_user_logged_in() ) 
+ {
+?>
 <?php 
 $request_uri = explode('/',$_SERVER['REQUEST_URI']);
 $request_uris = $request_uri[1];
@@ -36,4 +40,7 @@ $request_uris = $request_uri[1];
     <?php } ?>
 	</section>
 <?php get_footer(); ?>
+<?php } else { 
+header("Location: ".get_option('home')."/login/");
+ } ?>
 

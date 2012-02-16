@@ -50,5 +50,5 @@ if ( is_user_logged_in() )
 	</section>
 <?php get_footer(); ?>
 <?php } else { 
-header("Location: http://floliving.wordpressprojects.com/login/");
+header("Location: ".get_option('home')."/login/");
  } ?>

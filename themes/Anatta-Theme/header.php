@@ -57,7 +57,7 @@
 	        <section class="clearfix">
            
 	          <ul class="top-navigation">
-	            <li><a href="#">Need Help/Support?</a></li>
+	            <li><a href="mailto:support@floliving.zendesk.com">Need Help/Support?</a></li>
                  <?php if(is_user_logged_in()) { 
 				 $user = wp_get_current_user();
 				 ?>
@@ -66,7 +66,7 @@
                 <?php } ?>
 	          </ul>
 	        </section>
-	        <h2 class="tagline">essential health education for today's woman</h2>
+	        <h2 class="tagline">Hormonal Sync System&#x2122;</h2>
 	        <div class="logo">
 	          <h1><a href="<?php bloginfo('url'); ?>" rel="home" title="Go to homepage">Flo Livings</a></h1>
 	        </div>
@@ -75,7 +75,10 @@
 	    <!-- /Header --> 
 	    <!-- Navigation -->
 	    <nav id="menu">
+	    	<div class="menu-content">
+	    	<span>The 7 Healing Sessions:</span>
 	          <?php wp_nav_menu(); ?> 
+	          </div>
 	    </nav>
 	    <!-- /Navigation --> 
 	    <? } ?>

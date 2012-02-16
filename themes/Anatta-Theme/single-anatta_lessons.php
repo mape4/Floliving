@@ -1,3 +1,4 @@
+<?php if(is_user_logged_in()) { ?>
 <?php get_header(); ?>
 	<section class="content clearfix wrapper">
 		<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
@@ -40,3 +41,6 @@
 	</div>
 	</section>
 <?php get_footer(); ?>
+<?php } else { 
+    header("Location: ".get_option('home')."/login/");
+    } ?>

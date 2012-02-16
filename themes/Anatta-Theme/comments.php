@@ -14,22 +14,22 @@
 <section class="comments">
 <?php if ($comments) : ?>
     <h2>
-        <?php comments_number('There are not any comments on this article yet.',
-                              'Here is the comment on this article!',
-                              'Here are the comments on this article!' ); ?>
+        <?php comments_number('There are not any comments on this article yet!',
+                              'Comment on this article! ',
+                              'Comments on this article! ' ); ?>
     </h2>
     <?php $counter = 1; ?>
     <?php foreach ($comments as $comment) : ?>
     <article class="<?php echo $oddcomment; ?>">
         <header>
             <span class="number"><?php echo $counter; ?></span>
-            <?php echo get_avatar( $comment, $size = '64' ); ?>
-            <h3><?php comment_author_link(); ?></h3>
-            <p>
-                Comment left on:<br />
-                <?php comment_date('F jS, Y'); ?> at <?php comment_time('g:i a'); ?>
-            </p>
+            <?php echo get_avatar( $comment, $size = '32' ); ?>
+            <h3><strong><span><?php comment_author_link(); ?></span></strong></h3>
+            <h3>Comment left on: <?php comment_date('F jS, Y'); ?> at <?php comment_time('g:i a'); ?></h3>
+                
+                
         </header>
+        <div class="clear"></div>
         <?php if ($comment->comment_approved == '0') : ?>
         <em>Your comment is awaiting moderation.</em>
         <?php endif; ?>
@@ -66,7 +66,7 @@
             <input name="url" id="url" value="<?php echo $comment_author_url; ?>" />
             <?php endif; ?>
             <!--<p><small><strong>XHTML:</strong> You can use these tags: <?php echo allowed_tags(); ?></small></p>-->
-            <h2 for="comment">Leave A Comment:</h2>
+            <h2 for="comment">Please comment only after having finished watching the video as the page will reload:</h2>
             <textarea name="comment" id="comment"></textarea>
             <input name="submit" type="submit" id="submit" value="Leave your comment" />
             <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />

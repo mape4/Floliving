@@ -14,8 +14,16 @@ query_posts( $args );
 		<article id="post-<?php the_ID(); ?>" class="left-column home-page">
         <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
 		<h1 class="page-title"><?php echo $term->name; ?></h1>
-		<p class="page-des"><?php echo $term->description; ?></p>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<p class="page-des"><?php echo wpautop($term->description); ?></p>
+        <?php
+	
+		// If you have a taxonomy description, let'er rip!
+		//if(function_exists('get_yoast_term_description') && get_yoast_term_description()) {
+			//echo wptexturize(get_yoast_term_description());
+		//}
+	
+	?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<section class="home-section">
 			<article class="clearfix">
 			  <div class="video"><?php the_post_thumbnail(); ?></div>
@@ -59,7 +67,7 @@ query_posts( $args );
    
 <?php get_footer(); ?>
  <?php } else { 
-    header("Location: http://floliving.wordpressprojects.com/login");
+    header("Location: ".get_option('home')."/login/");
     } ?>
 
 

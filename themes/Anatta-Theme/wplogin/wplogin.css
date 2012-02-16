@@ -9,13 +9,13 @@ body.login{
 	 min-height: 700px!important;
 }
 /* WordPress Logo - MAKE SURE TO MATCH THE WIDTH AND HEIGHT */
-h1{
+.login h1{
 	position: absolute!important;
 	left: 135px;
 	top: 25px;
 }
 
-h1 a {
+.login h1 a {
 	background:url(../images/logo.jpg) 0 0 no-repeat;
 	width: 179px;
 	height: 81px;

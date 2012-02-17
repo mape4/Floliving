@@ -1,5 +1,9 @@
 <?php
-if ( is_user_logged_in() ) 
+if (is_page('dashboard') && !is_user_logged_in() ) 
+ {
+ header("Location: ".get_option('home')."/login/");
+ }
+ else 
  {
 ?>
 <?php 
@@ -40,7 +44,5 @@ $request_uris = $request_uri[1];
     <?php } ?>
 	</section>
 <?php get_footer(); ?>
-<?php } else { 
-header("Location: ".get_option('home')."/login/");
- } ?>
+<?php } ?>
 

@@ -48,7 +48,7 @@ function dmxAdvLayerPopup(sTitle,sURL,sPopupName,sContent,sClass,nPositionLeft,n
       <a href="http://www.floliving.com/?page_id=92" class="navlink">products</a></div>
       <!--<a href="#" class="navlink">events</a><br />-->
      <div style="width:140px; float:left; padding-top:16px;">
-     <a href="javascript:;"  onclick="dmxAdvLayerPopup('','http://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=87B5F2B7-52FD-468A-A724-8DCAFBB273B9&pid=a124e0b17a454eda937341a26656f4ff','poststory','','BorderlessWithClose','center','center',740,700,0,true,false,true,80,'','Linear',1,true,'','Linear',1,true,'',1,5,true,false,'#FFFFFF');return document.MM_returnValue"><img src="images/icon_home_buynow.jpg" width="60" height="54" hspace="5" border="0" /></a><img src="images/icon_home_connect.jpg" width="60" height="54" hspace="5" border="0" />
+     <a href="javascript:;"  onclick="dmxAdvLayerPopup('','http://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=87B5F2B7-52FD-468A-A724-8DCAFBB273B9&pid=5953e23e72a14b58aea41f3c2fb03d5a','poststory','','BorderlessWithClose','center','center',740,700,0,true,false,true,80,'','Linear',1,true,'','Linear',1,true,'',1,5,true,false,'#FFFFFF');return document.MM_returnValue"><img src="images/icon_home_buynow.jpg" width="60" height="54" hspace="5" border="0" /></a><img src="images/icon_home_connect.jpg" width="60" height="54" hspace="5" border="0" />
 <!--<a href="http://flo.openi.com.php5-12.dfw1-1.websitetestlink.com/?page_id=80" class="navlink">testimonials</a><br />
       <a href="#" class="navlink">1 item</a><br /><br />
       <a href="#" class="navlink"><u>LOGIN</u></a>--></div>

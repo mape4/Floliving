@@ -112,7 +112,7 @@ require_once('store-address.php');
         					?>
                            <script type="text/javascript">
         						<!--
-        						window.location = "http://www.floliving.com/thanks/";
+        						window.location = "http://www.floliving.com/thankyou/";
         						//-->
         						</script>
         					<?php //return Redirect::to('http://www.philipmccluskey.com/');

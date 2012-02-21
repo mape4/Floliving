@@ -72,11 +72,11 @@ function MM_swapImage() { //v3.0
       <area shape="circle" coords="331,117,54" href="http://www.floliving.com/?page_id=106" alt="Take the Quiz!" />
       <area shape="circle" coords="317,311,36" href="http://www.floliving.com/?page_id=109" alt="Activate" />
     </map>-->
-    <div style="background-image:url(../../../images/home_right_top_bg2.png); width:430px; height:384px;">
+    <a href="http://floliving.com/hormonal-sync-system-2/"><div style="background-image:url(../../../images/home_right_top_bg2.png); width:430px; height:384px;">
       <div style="padding-top:50px; padding-left:16px;">
         <?php include ('sidebar-ready.php'); ?>
       </div>
-    </div>
+    </div></a>
     <div style="float:left; background-image:url(../../../images/home_comm_bg.png); width:267px; height:145px; margin-top:3px;">
       <div style="padding-top:0px; padding-left:15px;" id="signup-form">
       

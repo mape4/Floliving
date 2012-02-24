@@ -71,25 +71,30 @@ function MM_swapImage() { //v3.0
 <div id="mainContent-inner">
 <div style="padding-left:36px; padding-right:24px; padding-top:30px;">
   <!--php include ('include-pressandbuzz.php'); -->
-  <div style="float:left"><a href="http://www.floliving.com/?page_id=109"><img src="../../images/flobox1.jpg" width="275" height="241" border="0"  style="margin-right:10px;" /></a><br />
-  <div align="right"><a href="http://www.floliving.com/?page_id=109"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+  <div style="float:left"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/flobox1.jpg" width="275" height="241" border="0"  style="margin-right:10px;" /></a><br />
+  <div align="right"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
   <div><span class="largetext">Purchase the Hormonal Sync System</span><br />
     <br />
     <span class="greytext-small">The Flo Hormonal Sync System is an online educational platform that allows you instant virtual access to health and life-changing lessons. With a unique combination of functional and energetic medicine, and a dose of sexy science lessons, this program will teach you to create a foundation of hormonal balance from which you’ll be freed from your symptoms and living in your FLO in no time! </span><span class="greytext"><br />
     <br />
-    $297 (+ shipping)<a href="javascript:;"  onclick="dmxAdvLayerPopup('','http://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=87B5F2B7-52FD-468A-A724-8DCAFBB273B9&pid=5953e23e72a14b58aea41f3c2fb03d5a','poststory','','BorderlessWithClose','center','center',740,700,0,true,false,true,80,'','Linear',1,true,'','Linear',1,true,'',1,5,true,false,'#FFFFFF');return document.MM_returnValue"><img src="../../images/flobuy.jpg" width="81" height="77" hspace="10" border="0" /></a><!--<a href="javascript:;"  onclick="MM_openBrWindow('https://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=87B5F2B7-52FD-468A-A724-8DCAFBB273B9&amp;pid=a124e0b17a454eda937341a26656f4ff','cart','toolbar=no,location=yes,scrollbars=yes,width=740,height=700')"><img src="../../images/flobuy.jpg" width="81" height="77" hspace="10" border="0" /></a>--></span></div>
+    $297
+    <div style="width:140px; float:left; padding-top:16px;" id="main">
+   <ul class="gallery clearfix">
+				
+				<li><a href="http://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=87B5F2B7-52FD-468A-A724-8DCAFBB273B9&pid=5953e23e72a14b58aea41f3c2fb03d5a&amp;iframe=true&amp;width=100%&amp;height=100%" rel="prettyPhoto[iframe]"><img src="../../images/flobuy.jpg" width="81" height="77" hspace="10" border="0" /></a></li>
+			</ul></div><!--<a href="javascript:;"  onclick="MM_openBrWindow('https://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=87B5F2B7-52FD-468A-A724-8DCAFBB273B9&amp;pid=a124e0b17a454eda937341a26656f4ff','cart','toolbar=no,location=yes,scrollbars=yes,width=740,height=700')"><img src="../../images/flobuy.jpg" width="81" height="77" hspace="10" border="0" /></a>--></span></div>
   <br />
   <br class="clearfloat-left" />
-  <div style="float:left;"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/flobox2.jpg" width="199" height="175" style="margin-right:10px;" border="0" /></a><br />
-  <div align="right"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+  <div style="float:left;"><a href="http://floliving.com/hormonal-sync-system/"><img src="../../images/flobox2.jpg" width="199" height="175" style="margin-right:10px;" border="0" /></a><br />
+  <div align="right"><a href="http://floliving.com/hormonal-sync-system/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
   <div><span class="largetext">How does the FLO Hormonal Sync System Work?</span><br />
     <br />
     <span class="greytext-small">This revolutionary program aligns you with what is uniquely feminine about you – your hormones! By using the science of medicinal foods and shifting your mindset and lifestyle, you will learn how to eat right for your hormones, reduce and eliminate frustrating menstrual, fertility, and libido issues, enhance energy and mood, and improve your health long term! Our protocol has been used for a decade at our center in Manhattan and is now being researched by a physician in conjunction with Columbia University. Click here to learn about the FLO Hormonal Sync System and the science behind FLO Living!</span></div>
   <br />
   <br />
   <br />
-  <div style="float:left"><a href="http://floliving.com/hormonal-sync-system/"><img src="../../../images/flobox3.jpg" width="199" height="175"  style="margin-right:10px;" border="0" /></a><br />
-  <div align="right"><a href="http://floliving.com/hormonal-sync-system/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+  <div style="float:left"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../../images/flobox3.jpg" width="199" height="175"  style="margin-right:10px;" border="0" /></a><br />
+  <div align="right"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
   <div><span class="largetext">The Hormonal Sync System contains:</span><br />
     <br />
     <span class="greytext-small">-	7 sessions containing 3 video lessons each	<br />
@@ -102,8 +107,8 @@ function MM_swapImage() { //v3.0
   <br />
   <br class="clearfloat-left" />
   <br />
-  <div style="float:left;"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/flobox5.jpg" width="199" height="174" style="margin-right:10px;" border="0" /></a><br />
-  <div align="right"><a href="http://floliving.com/hormonal-sync-system-2/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+  <div style="float:left;"><a href="http://floliving.com/testimonials/"><img src="../../images/flobox5.jpg" width="199" height="174" style="margin-right:10px;" border="0" /></a><br />
+  <div align="right"><a href="http://floliving.com/testimonials/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
   <div><span class="largetext">Hear from our flo Fans!</span><br />
     <br />
     <span class="greytext-small">When I turned 25, my health suddenly started going down the tubes. I was chronically stressed out. I lived all the time in an ever-fluctuating world of emotional turbulence. My skin was very broken out in acne. And my periods were terrible. <a href="http://www.floliving.com/?page_id=80">read more...</a></span></div>
@@ -128,11 +133,11 @@ function MM_swapImage() { //v3.0
   <br class="clearfloat-left" /><br />
   
     <div style="float:left;"><img src="../../images/flobox6.jpg" width="199" height="234" style="margin-right:10px;" /></div>
-  <div><span class="largetext">The flo Method Story</span><br />
+  <div><span class="largetext">My defining moment</span><br />
     <br />
     <span class="greytext-small">Learn how this method was developed by Alisa, how she overcame her struggle with her own hormonal imbalance, and how this program is making history with clinical data!</span><br />
 <br />
-<a href="http://www.floliving.com/?page_id=58"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a></div>
+<a href="http://www.floliving.com/2010/10/test-post-with-logo-added-from-media-library/"><img src="../../images/lm_button.jpg" width="88" height="21" border="0" /></a></div>
   <br />
   <br class="clearfloat-left" /><br />
   

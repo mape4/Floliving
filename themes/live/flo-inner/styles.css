@@ -16,6 +16,7 @@ body  {
 	padding: 0;
 	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
 	color: #000000;
+	
 }
 h1 {
 	font-size:22px;
@@ -251,7 +252,7 @@ display:none;
 display:none;
 }
 
-.img_entry img { float:left;
+.img_entry img {
 max-width:680px;
 padding-right: 20px;
  }
@@ -259,4 +260,10 @@ padding-right: 20px;
  .entry { 
  margin-bottom: 5px;
 
+ }
+ 
+ .postentry img { 
+ 
+ border: #666666 solid 1px; 
+  margin-bottom: 5px;
  }

@@ -10,6 +10,7 @@ Template Name: Thanks Email
     <head><title>Thank You! | FLOLiving</title>
     <meta name="keywords" content="Thank You! | FLOLiving" />
     <meta name="robots" content="NOINDEX" />
+	<meta http-equiv="Refresh" content="5;url=http://members.floliving.com/index.php?/register/JTns12" />
     <link href="http://www.1shoppingcart.com/SecureCart/styles/master.css" rel="stylesheet" type="text/css" />
     
         <style type="text/css" media="screen">
@@ -49,22 +50,16 @@ Template Name: Thanks Email
 		<form action="post">
 			<fieldset>
 				<legend>Thanks!</legend>
-				<p>We have successfully received your information.</p>
+				<p>You have successfully completed your order. You will now be redirected to the Registration page to create your account with our online educational platform.</p>
+				<p>If you see this message for more than 5 seconds, please click <a href="http://members.floliving.com/index.php?/register/JTns12"> here ...</a></p>
 				
 			</fieldset>
 		</form>
-		<div class="actions">
-			<a href="http://www.floliving.com"><img alt="Continue" src="http://www.1shoppingcart.com/app/images/button_continue.gif" style="border-width: 0px;" /></a>
-		</div>
 	</div>
 
     <div class="wrapper-footer">
         <div class="left">&copy; <span>2011</span> <a href="http://www.floliving.com" target="_blank">FLOLiving</a> - All rights reserved.</div>
-        <div class="right">
-			
-			Powered by <a href="http://www.1shoppingcart.com">1ShoppingCart</a>
-			
-        </div>
+       
     </div>
 <!--p align="center">1sc-web01</p-->
 

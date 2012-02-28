@@ -61,6 +61,12 @@
     //Support for WP3 menus - create menus in the admin interface, then add them to widget areas in
     //the theme (like, say, the Nav widget area). Menus are not baked into this theme.
     add_theme_support( 'menus');
+	
+	// navigation menu
+	if (function_exists('register_nav_menu')) {
+	register_nav_menu('primary', __('Header Navigation Menu'));
+	
+	}
 
     // add custom content after each post
     function add_post_content($content) {

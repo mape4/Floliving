@@ -55,7 +55,7 @@ query_posts( $args );
 		<section class="home-section">
 			<article class="clearfix">
 			<header>
-				<h2>Not Found</h2>
+				<h2>The videos for this session will be accessible shortly. We upgrade you to a new session every 10 days.</h2>
 			</header>
 		</article>
         </section>

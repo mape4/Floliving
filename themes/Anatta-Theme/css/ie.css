@@ -22,3 +22,12 @@ img {
  * comment the below line if you're using the 960 default layout, it doesn't have padding so box-sizing won't
  * matter */
 .ie7 .body { width: 648px; } /* needed to fix the width of the .body stuff */
+
+nav#menu ul li a{
+	font-size: 11px;
+	padding: 0 4px;
+	letter-spacing: 0px;
+}
+.login tr input{
+	margin-bottom: 20px;
+}

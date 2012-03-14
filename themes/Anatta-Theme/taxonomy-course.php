@@ -49,7 +49,7 @@ query_posts( $args );
 				<?php //comments_template(); //this is only in single.php ?>
 			</footer>-->
 			<?php endwhile; ?>
-		</article>
+	
 		
 		<?php else : ?>
 		<section class="home-section">
@@ -60,6 +60,7 @@ query_posts( $args );
 		</article>
         </section>
 		<?php endif; ?>
+			</article>
 		<div class="sidebar">
 	    <?php get_sidebar(); ?>
 	    </div>

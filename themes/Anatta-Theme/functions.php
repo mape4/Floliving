@@ -20,12 +20,6 @@
     add_action('init', 'removeHeadLinks');
 	wp_deregister_script('l10n');
 	
-    // remove version info from head and feeds
-    function complete_version_removal() {
-        return '';
-    }
-    add_filter('the_generator', 'complete_version_removal');
-
     // custom excerpt.
     function improved_trim_excerpt($text) {
         global $post;
@@ -61,12 +55,6 @@
     //Support for WP3 menus - create menus in the admin interface, then add them to widget areas in
     //the theme (like, say, the Nav widget area). Menus are not baked into this theme.
     add_theme_support( 'menus');
-	
-	// navigation menu
-	if (function_exists('register_nav_menu')) {
-	register_nav_menu('primary', __('Header Navigation Menu'));
-	
-	}
 
     // add custom content after each post
     function add_post_content($content) {

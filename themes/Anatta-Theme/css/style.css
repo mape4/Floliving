@@ -6,6 +6,16 @@
  font-weight: normal;
  font-style: normal;
 }
+
+@font-face {
+	font-family: 'FUTURAMC';
+	src: url('../fonts/FUTURAMC.eot');
+	src: local('☺'), url('../fonts/FUTURAMC.woff') format('woff'), url('../fonts/FUTURAMC.ttf') format('truetype'), url('../fonts/FUTURAMC.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
  @font-face {
  font-family: 'FuturaStdBook';
  src: url('../fonts/futurastd-book-webfont.eot');
@@ -61,7 +71,7 @@ h1, h2, h3, h4, h5, h6, p, li { line-height:1.2em; }
 /*---- Header ----*/
 #header { padding:14px 0px; }
 /*---- Main Navigation ----*/
-nav#menu { background:#580054;padding:0px 0px; position:relative; z-index:10; }
+nav#menu { background:#580054;padding:0px 0px; position:relative; z-index:10; height: 41px; overflow: hidden; }
 /*---- Content ----*/
 div#content { padding:0px; }
 /*---- Footer ----*/
@@ -83,7 +93,7 @@ header h2.tagline { color:#b14bb9; font-size:26px; font-weight:normal; float:rig
 /*---- Main Navigation ----*/
 nav#menu ul li { float:left;border-right: 1px solid #440141; padding: 5px 0px; }
 nav#menu ul li.menu-item-169 { margin-right:0px; border: none; }
-nav#menu ul li a { display:block; float:left; height:32px; line-height:34px; padding:0px 8px; font-size:13px; color:#fff; text-transform:uppercase; text-decoration:none; font-family: 'Futura-CondensedMedium', arial; letter-spacing: 1px; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
+nav#menu ul li a { display:block; float:left; height:32px; line-height:34px; padding:0px 6px; font-size:13px; color:#fff; text-transform:uppercase; text-decoration:none; font-family: 'FUTURAMC', arial; letter-spacing: 1px; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
 nav#menu ul li.current-menu-item a, nav#menu ul li a:hover, nav ul li.active a { background:url(../images/navigation-hover.gif) left top repeat-x; text-decoration:none; }
 .menu-content{ overflow:hidden; width:1000px; margin:0 auto; position:relative; padding:0px 10px; z-index:10;}
 nav#menu span{ float: left; color: #fff; font-size: 11px; padding-top: 14px; margin-right: 10px;}
@@ -267,7 +277,7 @@ padding-left: 16px;
 #registration_page { width:1000px; margin: 0px auto; background: url("../images/res-bg.png") repeat 0px 0px; }
 #registration_page .page-title { display: none; }
 #registration_page .header-res { float: left; width: 425px; margin: 0 50px; border-right: 1px solid #e7e2e7; }
-#registration_page .form-res { width: 450px; float: left; overflow: hidden; }
+#registration_page .form-res { width: 425px; float: left; overflow: hidden; }
 #registration_page .header-res h1 { font-family: "century Gothic", Arial; color: #B14BB9; font-size: 24px; font-weight: bold; }
 #registration_page .header-res P { padding-bottom: 30px; display: block; font-family: "Helvetica", arial; font-size: 14px; }
 #registration_page .header-res big { font-size: 19px; font-family: "Helvetica", arial; display: block; margin-bottom: 40px; }
@@ -304,9 +314,11 @@ padding-left: 16px;
 	padding: 11px 0 12px 9px!important;
 }
 
-.dashboard-left{
+.dashboard-right, .dashboard-left{
 	float: left;
-	width: 300px;
+	width: 320px;
+	border-top: 1px solid #f3eff3;
+	padding-top: 20px;
 }
 .dashboard-right{
 	float: right;

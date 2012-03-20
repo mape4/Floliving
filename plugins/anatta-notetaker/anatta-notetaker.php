@@ -116,7 +116,11 @@ class AnattaNoteTaker {
 
 		// Is there are note(s) already on file for this post?
 		
-		$this->connected_posts = p2p_type( AnattaNoteTaker::$p2p_connection )->get_connected( $this->current_post->ID );
+		$this->connected_posts = new WP_Query(array(
+			'connected_type'	=> AnattaNoteTaker::$p2p_connection,
+			'connected_items'	=> $this->current_post->ID,
+			'author'			=> $this->current_user->ID,
+		));
 		
 		wp_enqueue_style('notetaker-css', plugins_url('css/buttons.css', __FILE__));
 		wp_enqueue_script('notetaker', plugins_url('js/anatta_notetaker.js', __FILE__), array('jquery', 'wp-ajax-response'));
@@ -206,19 +210,26 @@ class AnattaNoteTaker {
 		) );			
 	}
 	function insert_notefield(){
+		global $current_user;
+		
 		$message = '';
 		$button_content = __('', 'floliving');
 		$post_id = get_queried_object_id(); // the id of the current single post
+		$user_id = $this->connected_posts->post->post_author;
+		
 		if( $this->is_note_attached() ){
+		
 			$message = $this->connected_posts->post->post_content;
 			$button_content = __('', 'floliving');
 		}
+		$cur_user = $current_user->ID;
 ?>
 		<div id='anatta_notetaker'>
-			<form id="anatta_notetaker_form" method="POST">
+        <form id="anatta_notetaker_form" method="POST">
 				<?php echo wp_nonce_field('floliving_notetaker_update_'.$post_id, '_notetaker_nonce', true, false); ?>
 				<label for="anatta_textfield_input">Keep Your Notes</label>
-				<textarea style="display:block; width:90%;resize:none;padding:0;margin:0;" id="anatta_textfield_input" class="anatta_textarea" rows="8" cols="20" name="anatta_textfield_input" title="Save notes about this lesson"><?php echo $message; ?></textarea>
+				<textarea style="display:block; width:90%;resize:none;padding:0;margin:0;" id="anatta_textfield_input" class="anatta_textarea" rows="8" cols="20" name="anatta_textfield_input" title="Save notes about this lesson"><?php //if($cur_user == $user_id) {  echo $message; } else { }
+				echo $message; ?></textarea>
 				<div style="text-align:right;padding-top:1em;">
 					<span style="width: 80%;" id="anatta_textfield_status"></span>
 					<a id="save_note" class="button blue" title="Save your note on this lesson"><?php echo $button_content; ?></a>
@@ -298,7 +309,7 @@ class AnattaNoteTaker {
 					'data' => __('Note Erased', 'floliving'),
 					'supplemental' => array(
 //						'html' => Anatta_Note_Manager::read_note($note_id, 'html')
-						'widget_id'	=> Anatta_Note_Manager::note_id((object)$note)
+						'widget_id'	=> Anatta_Note_Manager::note_id($note)
 					)
 		));
 		$success_response->send();		
@@ -344,7 +355,12 @@ class AnattaNoteTaker {
 		 */
 		$post = get_post($post_id);
 		$permalink = get_permalink($post_id);
-		$connections = p2p_type(self::$p2p_connection)->get_connected($post_id);
+		
+		$connections = new WP_Query(array(
+			'connected_type'	=> AnattaNoteTaker::$p2p_connection,
+			'connected_items'	=> $post_id,
+			'author'			=> $current_user->ID,
+		));
 		
 		$note = array(
 			'post_id' 	=> $post_id,
@@ -515,13 +531,22 @@ class Anatta_Note_Manager{
 					<big><a href="'.get_permalink($related->post->ID).'">'.$related->post->post_title.'</a></big>
 					<p>'.self::excerpt($post->post_content).'</p>
 				</li>',
-			'widget_id' => self::note_id($post)
+			'widget_id' => self::note_id($post),
+			'post_author'=> self::author_id($post)
 		);
 		unset($related);
 	}
 	function note_id($post){
-		return 'anatta_note_lesson_'.$post->ID;
+		if( is_object($post) )
+			return 'anatta_note_lesson_'.$post->ID;
+		if( is_array($post) )
+			return 'anatta_note_lesson_'.$post['ID'];
 	}
+	function author_id($post)
+	{
+		return $post->post_author;
+	}
+	
 	function update_note($post, $user_id, $note){
 	
 		$the_note = get_post( $note['note']->ID, ARRAY_A, 'edit');
@@ -563,7 +588,7 @@ class Anatta_Note_Manager{
 				'author'	=> $user_id
 			)
 		));
-		
+file_put_contents ( ABSPATH.'/wp-content/notewriter.txt', print_r($post_it_note, true).print_r($note, true) );		
 		// Return the markup for Ajax
 		
 		return Anatta_Note_Manager::format_as_html((object) $post_it_note);
@@ -642,6 +667,7 @@ class WP_Widget_Anatta_NoteTaker extends WP_Widget {
 			if( $notes_query_object->have_posts() ){
 				while($notes_query_object->have_posts() ) : $notes_query_object->the_post();
 					$output = Anatta_Note_Manager::format_as_html($post);
+					//echo "<pre>";print_r($output); echo "</pre>";
 					echo $output['content'];
 				endwhile;
 			} else {
@@ -651,6 +677,7 @@ class WP_Widget_Anatta_NoteTaker extends WP_Widget {
 		} else {
 			echo '<li>'.__('You must be logged in to see your notes', 'floliving').'</li>';
 		}		
+
 
 		echo '</ul>';
 
